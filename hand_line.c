@@ -1,7 +1,7 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 /**
- * remove_double_quotes - removes double quotes form the input
+ * rm_double_quotes - removes double quotes form the input
  *
  * @string: input command
  *
@@ -9,7 +9,7 @@
  *
  */
 
-void remove_double_quotes(char *string)
+void rm_double_quotes(char *string)
 {
 	int i = 0, j = 0;
 	int length = strlen(string);
@@ -30,26 +30,26 @@ void remove_double_quotes(char *string)
 
 
 /**
- * replace_pound_with_null - replaces the pounds with null
+ * rp_pound_with_null - replaces the pounds with null
  *
  *
- * @str: string
+ * @string: string input (line)
  *
  * Return: void
  *
  */
 
 
-void replace_pound_with_null(char *str)
+void rp_pound_with_null(char *string)
 {
-	int i;
-	int len = strlen(str);
+	int i = 0;
+	int length = strlen(string);
 
-	for (i = 0; i < len; i++)
+	while (i < length)
 	{
-		if (str[i] == '#')
+		if (string[i] == '#')
 		{
-			str[i] = '\0';
+			string[i] = '\0';
 			break;
 		}
 	}
@@ -70,8 +70,8 @@ char *handle_line(char *line)
 	char *newline;
 
 	newline = line;
-	replace_pound_with_null(newline);
-	remove_double_quotes(newline);
+	rp_pound_with_null(newline);
+	rm_double_quotes(newline);
 
 	return (newline);
 }

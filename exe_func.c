@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 
 /**
@@ -13,21 +13,21 @@
 int open_fun(char **argv)
 {
 	int status;
-	pid_t pid;
+	pid_t processid;
 
-	pid = fork();
+	processid = fork();
 
-	if (pid == 0)
+	if (processid == 0)
 	{
 		if (execvp(argv[0], argv) == -1)
 			return (0);
 	}
-	else if (pid < 0)
+	else if (processid < 0)
 		perror("Error pid");
 	else
 	{
 		do {
-			waitpid(pid, &status, WUNTRACED);
+			waitpid(processid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 

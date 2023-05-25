@@ -20,8 +20,8 @@ int execute_fun(char **argv);
 int num_func(void);
 int open_fun(char **argv);
 int _execvp(char *arg, char **argv);
-void replace_pound_with_null(char *string);
+void rp_pound_with_null(char *string);
 char *handle_line(char *line);
-void remove_double_quotes(char *string);
+void rm_double_quotes(char *string);
 
 #endif /* SHELL_H */

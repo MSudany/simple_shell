@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 /**
  * get_line - gets the line from user;
