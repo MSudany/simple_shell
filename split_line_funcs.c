@@ -12,9 +12,9 @@
 char **split_line(char *line)
 {
 	int buffer_size = BUFFER_SIZE, i = 0;
-	char *tok, **tokens = malloc(buffer_size * sizeof(char *));
+	char *tok, **toks = malloc(buffer_size * sizeof(char *));
 
-	if (!tokens)
+	if (!toks)
 	{
 		perror("allocation error\n");
 		exit(EXIT_FAILURE);
@@ -23,12 +23,12 @@ char **split_line(char *line)
 	tok = strtok(line, DELIM);
 	while (tok != NULL)
 	{
-		tokens[i] = tok;
+		toks[i] = tok;
 		i++;
 
 		tok = strtok(NULL, DELIM);
 	}
 
-	tokens[i] = '\0';
-	return (tokens);
+	toks[i] = '\0';
+	return (toks);
 }

@@ -119,6 +119,7 @@ int execute_fun(char **argv)
 		{
 			return (builtin_functions[i](argv));
 		}
+		i++;
 	}
 
 	return (open_fun(argv));

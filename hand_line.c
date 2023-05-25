@@ -52,6 +52,7 @@ void rp_pound_with_null(char *string)
 			string[i] = '\0';
 			break;
 		}
+		i++;
 	}
 }
 
