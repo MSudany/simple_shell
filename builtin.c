@@ -99,7 +99,7 @@ int shell_exit(char **argv)
 
 
 /**
- * execute_fun - executes built in funcs or run other funcs
+ * execute_func - executes built in funcs or run other funcs
  *
  * @argv: array of parameters
  *
