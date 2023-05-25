@@ -99,7 +99,7 @@ int shell_exit(char **argv)
 
 
 /**
- * execute_func - executes built in funcs or run other funcs
+ * execute_fun - executes built in funcs or run other funcs
  *
  * @argv: array of parameters
  *
@@ -107,7 +107,7 @@ int shell_exit(char **argv)
  *
  */
 
-int execute_func(char **argv)
+int execute_fun(char **argv)
 {
 	int i = 0;
 
@@ -121,5 +121,5 @@ int execute_func(char **argv)
 		}
 	}
 
-	return (open_func(argv));
+	return (open_fun(argv));
 }

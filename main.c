@@ -25,7 +25,7 @@ int main(void)
 
 		command = handle_line(command);
 		argv = split_line(command);
-		mode = execute_func(argv);
+		mode = execute_fun(argv);
 
 		free(command);
 		free(argv);
